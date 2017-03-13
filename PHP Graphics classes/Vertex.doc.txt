@@ -1,0 +1,39 @@
+
+<- Vertex ----------------------------------------------------------------------
+
+Vertex Class is the representation of a point in space with five attributes:
+-> Its x axis coordinate;
+-> Its y axis coordinate;
+-> Its z depth coordinate;
+-> A coordinate w with default value 1 for matrix multiplaction purposes;  
+-> A color represented by an instance of the Color Class (see Color.doc.txt).
+All variables are private.
+
+Class provides public Get and Set functions for it's attributes accordingly:
+
+	public function getX()
+	public function getY()
+	public function getZ()
+	public function getW()
+	public function getColor()
+
+	public function setX( $v )
+	public function setY( $v )
+	public function setZ( $v )
+	public function setW( $v )
+	public function setColor( $v )
+
+Class also contains Boolean static attribute
+-> verbose;
+With default state False, which controls the display of information related
+to the use of the Class.
+
+Example:
+
+Input:
+	Vertex::$verbose = True;
+	$vtxO  = new Vertex( array( 'x' => 0.0, 'y' => 0.0, 'z' => 0.0 ) );
+
+Output:
+	Vertex( x: 0.00, y: 0.00, z:0.00, w:1.00, Color( red: 255, green: 255, blue: 255 ) ) constructed
+---------------------------------------------------------------------- Vertex ->

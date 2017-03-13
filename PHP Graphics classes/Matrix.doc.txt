@@ -1,0 +1,55 @@
+
+<- Matrix ----------------------------------------------------------------------
+The Matrix Class represents 4x4 matrices
+
+An instance can be created with different mandatory preset attribute
+and sometimes additional mandatory parameter:
+-> IDENTITY;
+-> SCALE (requires scale factor in 'scale');
+-> RX (requires rotation angle factor in 'angle' in radians);
+-> RY (requires rotation angle factor in 'angle' in radians);
+-> RZ (requires rotation angle factor in 'angle' in radians);
+-> TRANSLATION (requires a Vector Class object in 'vtc');
+-> PROJECTION (requires 'fov' ( in degree ) , 'ratio', 'near', 'far');
+
+Example:
+
+Input:
+	new Matrix( array( 'preset' => Matrix::SCALE, 'scale' => 10.0 ) );
+	print( $S . PHP_EOL . PHP_EOL );
+OUTPUT:
+	M | vtcX | vtcY | vtcZ | vtxO
+	-----------------------------
+	x | 10.00 | 0.00 | 0.00 | 0.00
+	y | 0.00 | 10.00 | 0.00 | 0.00
+	z | 0.00 | 0.00 | 10.00 | 0.00
+	w | 0.00 | 0.00 | 0.00 | 1.00
+
+
+The class provies the following methods :
+
+Matrix mult( $mtrx ): result of the multiplication of the current matrix by $mtrx.
+
+Vertex transforVertex( Vertex $vtx ): result of the vertex's transformation by the matrix.
+
+Class also contains Boolean static attribute
+-> verbose;
+With default state False, which controls the display of information related
+to the use of the Class.
+
+Example:
+
+Input:
+	Matrix::$verbose = True;
+	new Matrix( array( 'preset' => Matrix::IDENTITY) );
+	print( $S . PHP_EOL . PHP_EOL );
+OUTPUT:
+	Matrix IDENTITY instance constructed
+	M | vtcX | vtcY | vtcZ | vtxO
+	-----------------------------
+	x | 1.00 | 0.00 | 0.00 | 0.00
+	y | 0.00 | 1.00 | 0.00 | 0.00
+	z | 0.00 | 0.00 | 1.00 | 0.00
+	w | 0.00 | 0.00 | 0.00 | 1.00
+
+---------------------------------------------------------------------- Matrix ->

@@ -1,0 +1,49 @@
+
+<- Color ----------------------------------------------------------------------
+This Class will allows to represent colors and perform a few simple operations
+on their components.
+
+
+The Color Class have three public integer attributes:
+-> $red;
+-> $green;
+-> $blue;
+that represent the components of a color which represent a color instance.
+
+An instance can be contructed from either a RGB value:
+new Color( array( 'rgb' => 'a31bc5') );
+
+Or from distinct red, green, blue components:
+new Color( array( 'red' => 120, 'green' => 85, 'blue' => 180 ) );
+
+All distinct values and RGB value are converted to intergers.
+No checks and restrictions on values are made.
+
+
+The class provides the following methods:
+
+Color   add( Color $rgb );
+Adds each color component and returns a new Color instance.
+
+Color   sub( Color $rgb );
+Substracts each color component and returns a new Color instance.
+
+Color   mult( $num );
+Multiplies each color component by factor $num and returns a new Color
+instance.
+
+
+Class also contains Boolean static attribute
+-> verbose;
+With default state False, which controls the display of information related
+to the use of the Class.
+
+Example:
+
+Input:
+	Color::$verbose = True;
+	$red = new Color( array( 'red' => 0xff, 'green' => 0, 'blue' => 0 ) );
+
+Output:
+	Color( red: 255, green:   0, blue:   0 ) constructed.
+---------------------------------------------------------------------- Color ->

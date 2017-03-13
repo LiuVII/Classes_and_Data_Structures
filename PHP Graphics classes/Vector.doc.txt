@@ -1,0 +1,58 @@
+
+<- Vector ----------------------------------------------------------------------
+The Vector class represent directions or movements in space.
+
+A vector is represented by the following characteristics:
+->x;
+->y;
+->z;
+->w (which is set to zero and used for multiplaction convinience);
+
+An instance can be constructed from two discinct bojects of Class Vertex
+mandatory in 'dest' and arbitrary 'orig'.
+
+Example:
+	new Vector( (array( 'dest' => $Vertex, 'orig' => $Vertex) ) );
+
+The default 'orig' is set to (0,0,0,1).
+
+
+The class provies the following methods :
+
+-> float magnitude() : returns the vector’s length (or "norm").
+
+-> Vector normalize() : returns a normalized version of the vector. If the vector is
+already normalized, returns a fresh copy of the vector.
+
+-> Vector add( Vector $rhs ) : returns the sum vector of both vectors.
+
+-> Vector sub( Vector $rhs ) : returns the difference vector of both vectors.
+
+-> Vector opposite() : returns the opposite vector.
+
+-> Vector scalarProduct( Vector $k) : returns the multiplication of the vector with a scalar.
+
+-> float dotProduct( Vector $rhs ) : returns the scalar multiplication of both vectors.
+
+-> float cos( Vector $rhs ) : returns the angle’sAppendix cosine between both vectors.
+
+-> Vector crossProduct( Vector $rhs ) : returns the right-hand cross multiplication of both vectors.
+
+
+Class also contains Boolean static attribute
+-> verbose;
+
+With default state False, which controls the display of information related
+to the use of the Class.
+
+Example:
+
+Input:
+	Vertex::$verbose = False;
+	Vector::$verbose = True;
+	$vtxO = new Vertex( array( 'x' => 0.0, 'y' => 0.0, 'z' => 0.0 ) );
+
+Output:
+	Vector( x:1.00, y:0.00, z:0.00, w:0.00 ) constructed
+
+---------------------------------------------------------------------- Vector ->
